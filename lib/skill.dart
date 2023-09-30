@@ -1,73 +1,526 @@
+// ignore_for_file: use_key_in_widget_constructors, prefer_const_constructors, unnecessary_new
+
 import 'package:flutter/material.dart';
 
 class SkillsPage extends StatelessWidget {
-  final List<String> skills = [
-    'C',
-    'Java',
-    'ShellScript',
-    'Assembly-language',
-    'Python',
-    'HTML/CSS',
-  ];
-
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return new Scaffold(
       appBar: AppBar(
-        title: Text('Skills'),
-        centerTitle: true,
-        backgroundColor: Colors.black54,
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: GridView.builder(
-          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2, // Adjust the number of columns as needed
-            crossAxisSpacing: 8.0,
-            mainAxisSpacing: 8.0,
+        title: Text(
+          "MY SKILLS",
+          style: TextStyle(
+            fontFamily: "Comfortaa",
+            fontSize: 20,
+            fontWeight: FontWeight.w500,
+            color: Colors.white,
           ),
-          itemCount: skills.length,
-          itemBuilder: (context, index) {
-            return SkillCard(skill: skills[index]);
-          },
+        ),
+        centerTitle: true,
+        backgroundColor: Colors.tealAccent,
+      ),
+      body: SingleChildScrollView(
+        child: Container(
+          padding: EdgeInsets.fromLTRB(0, 35, 0, 0),
+          decoration: BoxDecoration(
+            image: DecorationImage(
+                image: AssetImage("images/skillbackground.png"),
+                fit: BoxFit.cover),
+          ),
+          child: Column(
+            children: <Widget>[
+              Row(
+                children: <Widget>[
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(20, 10, 0, 0),
+                    child: Column(
+                      children: <Widget>[
+                        Container(
+                          padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Colors.greenAccent,
+                            ),
+                            borderRadius: BorderRadius.circular(20.0),
+                          ),
+                          child: Image(
+                            image: AssetImage('logos/1.png'),
+                            height: 80.0,
+                          ),
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Text(
+                          "C++",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontFamily: "Sniglet",
+                            fontSize: 20,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Column(
+                    children: <Widget>[
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(20, 10, 0, 0),
+                        child: Container(
+                          padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Colors.redAccent,
+                            ),
+                            borderRadius: BorderRadius.circular(20.0),
+                          ),
+                          child: Image(
+                            image: AssetImage('logos/2.png'),
+                            height: 80.0,
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Text(
+                        "     Python",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontFamily: "Sniglet",
+                          fontSize: 20,
+                        ),
+                      ),
+                    ],
+                  ),
+                  Column(
+                    children: <Widget>[
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(20, 10, 0, 0),
+                        child: Container(
+                          padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Colors.blueAccent,
+                            ),
+                            borderRadius: BorderRadius.circular(20.0),
+                          ),
+                          child: Image(
+                            image: AssetImage('logos/3.png'),
+                            height: 80.0,
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Text(
+                        "     Dart",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontFamily: "Sniglet",
+                          fontSize: 20,
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+              Row(
+                children: <Widget>[
+                  Column(
+                    children: <Widget>[
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(20, 10, 0, 0),
+                        child: Container(
+                          padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Colors.redAccent,
+                            ),
+                            borderRadius: BorderRadius.circular(20.0),
+                          ),
+                          child: Image(
+                            image: AssetImage('logos/4.png'),
+                            height: 80.0,
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Text(
+                        "     HTML",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontFamily: "Sniglet",
+                          fontSize: 20,
+                        ),
+                      ),
+                    ],
+                  ),
+                  Column(
+                    children: <Widget>[
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(20, 10, 0, 0),
+                        child: Container(
+                          padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Colors.blueAccent,
+                            ),
+                            borderRadius: BorderRadius.circular(20.0),
+                          ),
+                          child: Image(
+                            image: AssetImage('logos/5.png'),
+                            height: 80.0,
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Text(
+                        "   CSS",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontFamily: "Sniglet",
+                          fontSize: 20,
+                        ),
+                      ),
+                    ],
+                  ),
+                  Column(
+                    children: <Widget>[
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(20, 10, 0, 0),
+                        child: Container(
+                          padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Colors.greenAccent,
+                            ),
+                            borderRadius: BorderRadius.circular(20.0),
+                          ),
+                          child: Image(
+                            image: AssetImage('logos/6.png'),
+                            height: 80.0,
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Text(
+                        "    JavaScript",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontFamily: "Sniglet",
+                          fontSize: 17,
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+              Row(
+                children: <Widget>[
+                  Column(
+                    children: <Widget>[
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(20, 10, 0, 0),
+                        child: Container(
+                          padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Colors.blueAccent,
+                            ),
+                            borderRadius: BorderRadius.circular(20.0),
+                          ),
+                          child: Image(
+                            image: AssetImage('logos/12.png'),
+                            height: 80.0,
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Text(
+                        "    Flutter",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontFamily: "Sniglet",
+                          fontSize: 20,
+                        ),
+                      ),
+                    ],
+                  ),
+                  Column(
+                    children: <Widget>[
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(20, 10, 0, 0),
+                        child: Container(
+                          padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Colors.greenAccent,
+                            ),
+                            borderRadius: BorderRadius.circular(20.0),
+                          ),
+                          child: Image(
+                            image: AssetImage('logos/7.png'),
+                            height: 80.0,
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Text(
+                        "    Bootstrap",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontFamily: "Sniglet",
+                          fontSize: 17,
+                        ),
+                      ),
+                    ],
+                  ),
+                  Column(
+                    children: <Widget>[
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(20, 10, 0, 0),
+                        child: Container(
+//                      padding: const EdgeInsets.fromLTRB(,3,3,3),
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Colors.redAccent,
+                            ),
+                            borderRadius: BorderRadius.circular(20.0),
+                          ),
+                          child: Image(
+                            image: AssetImage('logos/9.png'),
+                            height: 100.0,
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Text(
+                        "    Firebase",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontFamily: "Sniglet",
+                          fontSize: 17,
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+              Row(
+                children: <Widget>[
+                  Column(
+                    children: <Widget>[
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(20, 10, 0, 0),
+                        child: Container(
+                          padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Colors.greenAccent,
+                            ),
+                            borderRadius: BorderRadius.circular(20.0),
+                          ),
+                          child: Image(
+                            image: AssetImage('logos/8.png'),
+                            height: 80.0,
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Text(
+                        "      Django",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontFamily: "Sniglet",
+                          fontSize: 17,
+                        ),
+                      ),
+                    ],
+                  ),
+                  Column(
+                    children: <Widget>[
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(20, 10, 0, 0),
+                        child: Container(
+                          padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Colors.redAccent,
+                            ),
+                            borderRadius: BorderRadius.circular(20.0),
+                          ),
+                          child: Image(
+                            image: AssetImage('logos/10.png'),
+                            height: 80.0,
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Text(
+                        "    PostgreSQL",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontFamily: "Sniglet",
+                          fontSize: 17,
+                        ),
+                      ),
+                    ],
+                  ),
+                  Column(
+                    children: <Widget>[
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(20, 10, 0, 0),
+                        child: Container(
+                          padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Colors.blueAccent,
+                            ),
+                            borderRadius: BorderRadius.circular(20.0),
+                          ),
+                          child: Image(
+                            image: AssetImage('logos/11.png'),
+                            height: 80.0,
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Text(
+                        "    Cloud",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontFamily: "Sniglet",
+                          fontSize: 17,
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+              Row(
+                children: <Widget>[
+                  Column(
+                    children: <Widget>[
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(20, 10, 0, 0),
+                        child: Container(
+                          padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Colors.redAccent,
+                            ),
+                            borderRadius: BorderRadius.circular(20.0),
+                          ),
+                          child: Image(
+                            image: AssetImage('logos/13.png'),
+                            height: 80.0,
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Text(
+                        "    Arduino",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontFamily: "Sniglet",
+                          fontSize: 17,
+                        ),
+                      ),
+                    ],
+                  ),
+                  Column(
+                    children: <Widget>[
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(20, 10, 0, 0),
+                        child: Container(
+                          padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Colors.blueAccent,
+                            ),
+                            borderRadius: BorderRadius.circular(20.0),
+                          ),
+                          child: Image(
+                            image: AssetImage('logos/14.png'),
+                            height: 80.0,
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Text(
+                        "   Data",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontFamily: "Sniglet",
+                          fontSize: 17,
+                        ),
+                      ),
+                    ],
+                  ),
+                  Column(
+                    children: <Widget>[
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(20, 10, 0, 0),
+                        child: Container(
+                          padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Colors.greenAccent,
+                            ),
+                            borderRadius: BorderRadius.circular(20.0),
+                          ),
+                          child: Image(
+                            image: AssetImage('logos/15.png'),
+                            height: 80.0,
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Text(
+                        "    AI",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontFamily: "Sniglet",
+                          fontSize: 17,
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 40,
+              ),
+            ],
+          ),
         ),
       ),
     );
   }
-}
-
-class SkillCard extends StatelessWidget {
-  final String skill;
-
-  SkillCard({required this.skill});
-
-  @override
-  Widget build(BuildContext context) {
-    return Card(
-      elevation: 2.0,
-      child: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            const Icon(Icons.code, size: 40.0, color: Colors.blue),
-            SizedBox(height: 8.0),
-            Text(
-              skill,
-              style:
-                  const TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
-              textAlign: TextAlign.center,
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-void main() {
-  runApp(MaterialApp(
-    home: SkillsPage(),
-  ));
 }
